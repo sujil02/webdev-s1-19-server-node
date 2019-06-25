@@ -1,7 +1,7 @@
 module.exports = function (app) {
 
     const websiteDao = require('../daos/WebsiteDao');
-    const websiteService = require("../services/websiteService");
+    const websiteService = require("../services/WebsiteService");
 
     const createWebsite = (req, res) =>
         websiteService
