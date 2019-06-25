@@ -9,7 +9,7 @@ const findAllWebsites = () =>
 const findWebsiteById = websiteId =>
     websiteModel.findById(websiteId)
 
-const deleteWebsite = websiteId =>
+const deleteWebsite = (websiteId) =>
     websiteModel.remove({_id: websiteId})
 
 const updateWebsite = (websiteId, newWebsite) =>

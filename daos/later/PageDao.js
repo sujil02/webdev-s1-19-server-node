@@ -1,4 +1,4 @@
-const websiteModel = require('../../models/layout/WebsiteModel')
+const websiteModel = require('../../models/WebsiteModel')
 
 const findPagesForWebsite = wid =>
     websiteModel.find({_id: wid},

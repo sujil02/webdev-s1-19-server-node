@@ -3,7 +3,10 @@ const WebsiteSchema = require('./WebsiteSchema')
 
 const UserSchema = mongoose.Schema({
     username: String,
-    websites: [{websiteId: mongoose.Schema.Types.ObjectId}]
+    password: String,
+    firstName: String,
+    lastName:String,
+    websites: [WebsiteSchema]
 });
 
 module.exports = UserSchema;

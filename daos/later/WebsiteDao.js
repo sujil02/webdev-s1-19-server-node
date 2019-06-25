@@ -1,10 +1,10 @@
-const websiteModel = require('../../models/layout/WebsiteModel')
+const websiteModel = require('../../models/WebsiteModel')
 
 const createWebsite = website =>
     websiteModel.create(website)
 
 const findAllWebsites = () =>
-    websiteModel.find({}, {title: 1})
+    websiteModel.find();
 
 module.exports = {
     createWebsite,

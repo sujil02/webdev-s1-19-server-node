@@ -1,11 +1,11 @@
-const websiteDao = require('../daos/later/PageDao');
+const pageDao = require('../daos/later/PageDao');
 
 const findPagesForWebsite = wid =>
-    websiteDao
+    pageDao
         .findPagesForWebsite(wid)
 
 const findPageById = pid =>
-    websiteDao
+    pageDao
         .findPageById(pid)
 
 module.exports = {

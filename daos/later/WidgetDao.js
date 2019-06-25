@@ -1,4 +1,4 @@
-const websiteModel = require('../../models/layout/WebsiteModel')
+const websiteModel = require('../../models/WebsiteModel')
 
 const appendWidget = (widget, websiteId, pageId, rowId, columnId) =>
     websiteModel.update(

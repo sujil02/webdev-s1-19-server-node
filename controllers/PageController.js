@@ -1,4 +1,3 @@
-
 module.exports = function (app) {
     const pageDao = require('../daos/PageDao')
 
@@ -21,5 +20,5 @@ module.exports = function (app) {
     app.get('/api/websites/:wid/pages', findPagesForWebsite)
     app.get('/api/websites/:wid/pages/:pid', findPageById)
     app.post('/api/websites/:wid/pages', createPage)
-        app.put('/api/websites/:wid/pages/:pid', updatePage)
+    app.put('/api/websites/:wid/pages/:pid', updatePage)
 }

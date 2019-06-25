@@ -14,9 +14,14 @@ findPageById = (websiteId, pageId) =>
     websiteDao.findWebsiteById(websiteId)
         .then(website => website.pages.id(pageId))
 
+deletePage = (websiteId, pageId) =>
+    websiteDao.findWebsiteById(websiteId)
+        .then(website => website.pages.remove({_id: pageId}))
+
 module.exports = {
     findPagesForWebsite,
     createPage,
     findPageById,
-    updatePage
+    updatePage,
+    deletePage
 }
