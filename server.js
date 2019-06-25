@@ -1,5 +1,5 @@
 var express = require('express')
-var session = require('express-session')
+//var session = require('express-session')
 var bodyParser = require('body-parser')
 require('./models/db');
 
@@ -7,11 +7,11 @@ var app = express()
 
 app.use(bodyParser.json())
 
-app.use(session({
-    resave: false,
-    saveUninitialized: true,
-    secret: 'any string'
-}));
+// app.use(session({
+//     resave: false,
+//     saveUninitialized: true,
+//     secret: 'any string'
+// }));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -104,4 +104,4 @@ require('./controllers/PageController')(app)
 // require("./controllers/page.controller.server")(app);
 // require("./controllers/later/WebsiteController")(app);
 // require("./controllers/later/PageController")(app);
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
