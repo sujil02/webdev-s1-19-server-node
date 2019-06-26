@@ -1,4 +1,4 @@
-const userDao = require('../daos/userDao');
+const userDao = require('../daos/UserDao');
 
 
 const createUser = (user) =>
