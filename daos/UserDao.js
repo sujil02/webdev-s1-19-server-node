@@ -7,7 +7,9 @@ const createUser = user =>
 const findUserById = userId =>
     userModel.findById(userId)
 
-const findUserByCredentials = (username, password) => {
+const findUserByCredentials = (username, res) => {
+    userModel.findOne(username, function(err,obj) { console.log(obj); })
+        .then(user => res.json(user));
 
 }
 const updateUser = (userId, newUser) =>
@@ -19,9 +21,15 @@ const updateUser = (userId, newUser) =>
                 lastName: newUser.lastName
             }
         })
+
+
+const findAllUsers = () =>
+    userModel.find();
+
 module.exports = {
     createUser,
     findUserById,
     findUserByCredentials,
-    updateUser
+    updateUser,
+    findAllUsers
 };

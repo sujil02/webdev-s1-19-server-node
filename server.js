@@ -1,5 +1,5 @@
 var express = require('express')
-//var session = require('express-session')
+var session = require('express-session')
 var bodyParser = require('body-parser')
 require('./models/db');
 
@@ -7,11 +7,11 @@ var app = express()
 
 app.use(bodyParser.json())
 
-// app.use(session({
-//     resave: false,
-//     saveUninitialized: true,
-//     secret: 'any string'
-// }));
+app.use(session({
+    resave: false,
+    saveUninitialized: true,
+    secret: 'any string'
+}));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -44,7 +44,7 @@ app.get('/add/:a/:b', addAplusB);
 function login(req, res) {
     var username = req.query['username']
     var password = req.query['password']
-    if(username == 'alice' && password == 'alice') {
+    if(username === 'alice' && password === 'alice') {
         res.send('Hello Alice')
     } else {
         res.send('Sorry, try again')
@@ -94,11 +94,12 @@ const getAttribute = (req, res) => {
 app.get('/api/session/set/:key/:value', setAttribute)
 app.get('/api/session/get/:key', getAttribute)
 
-const authentication = require('./controllers/authentication.controller.server');
-authentication(app)
+//const authentication = require('./controllers/authentication.controller.server');
+//authentication(app)
 
 require('./controllers/WebsiteController')(app)
 require('./controllers/PageController')(app)
+require('./controllers/UserController')(app)
 
 
 // require("./controllers/page.controller.server")(app);
