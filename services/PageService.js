@@ -8,7 +8,16 @@ const findPageById = pid =>
     pageDao
         .findPageById(pid)
 
+const deletePage = (websiteId,pageId) =>
+    pageDao.deletePage(websiteId,pageId)
+
+const updatePage = (websiteId, page) =>
+    pageDao.updatePage(websiteId, page)
+
+
 module.exports = {
+    deletePage,
+    updatePage,
     findPagesForWebsite,
     findPageById
 };
